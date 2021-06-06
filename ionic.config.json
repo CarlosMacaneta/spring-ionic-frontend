@@ -1,0 +1,7 @@
+{
+  "name": "vendasSpring",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
