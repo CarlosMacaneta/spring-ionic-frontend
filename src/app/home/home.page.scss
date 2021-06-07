@@ -2,6 +2,12 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
+
+h3 {
+  text-align: center;
+}
+
+
 #container {
   text-align: center;
   position: absolute;
@@ -25,4 +31,12 @@ ion-menu-button {
 
 #container a {
   text-decoration: none;
+}
+
+#home-logo {
+  width: 200px;
+  align-self: center;
+  margin: auto;
+  display: block;
+  padding: 10px;
 }
