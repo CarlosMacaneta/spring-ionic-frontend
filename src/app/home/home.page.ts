@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage implements OnInit {
   public home: string;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.home = this.activatedRoute.snapshot.paramMap.get('id');
+  }
+
+  login() {
+    this.router.navigateByUrl('/categorias');
   }
 
 }
