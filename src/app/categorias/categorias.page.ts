@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { CategoriaService } from '../services/domain/categoria.service';
 
 @Component({
   selector: 'app-categorias',
@@ -9,10 +10,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CategoriasPage implements OnInit {
   public id: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private router: Router, private categoriaService: CategoriaService) { }
 
   ngOnInit() {
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
+  ionViewDidEnter() {
+
+    this.categoriaService.findAll()
+    .subscribe(response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      });
+  }
 }
